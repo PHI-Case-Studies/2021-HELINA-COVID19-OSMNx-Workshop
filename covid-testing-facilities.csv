@@ -1,0 +1,23 @@
+FACILITY,CITY,ADDRESS,LAT,LON,COORDINATES,NOTES
+Uganda Virus Research Insitute,Entebbe,"51/59 Nakiwogo Rd, Entebbe, Uganda",0.075898,32.457466,"0.07589818688171864, 32.45746567116031",
+Central Public Health Laboratory,Kampala,"7/11, Plot 113 Buganda Rd, Kampala, Uganda",0.331246,32.576171,"0.331245631028126, 32.57617147103373",
+Infectious Disease Institute Laboratory,Kampala,"P.O.Box 22418, Kampala, Uganda",0.339155,32.576119,"0.3391550027171229, 32.57611913788221",
+Makerere University,Kampala,"University Rd, Kampala, Uganda",0.333766,32.567515,"0.33376643025242, 32.56751532874441",
+Mild May Laboratory,Kampala,"6HG2+QJH, Kampala, Uganda",0.227261,32.551494,"0.22726149143899727, 32.551493611083714",
+Tororo Mobile laboratory,Tororo,,0.683153,34.185248,"0.6831528377847048, 34.18524780367273",Tororo city location 
+Mutukula Mobile Laboratory,Mutukula,,-0.979728,31.416494,"-0.9797282431715687, 31.416494243505745",Mutukula city location
+Adjumani Mobile Laboratory,Adjumani,,3.376778,31.791709,"3.3767777151337146, 31.79170900687454",Adjumani city location
+Joint Clinical Research Center (JCRC),Kampala,"P.o.Box 10005, Kampala, Uganda",0.247106,32.561545,"0.24710642516379605, 32.56154518525522",
+MBN Laboroatory,Kampala,"Plot 28 Nakasero Rd, Kampala, Uganda",0.324401,32.576804,"0.3244006304886406, 32.57680365762819",
+Medipal International Hospital,Kampala,"John Babiha (Acacia) Ave, Kampala, Uganda",0.326771,32.587699,"0.32677070175063294, 32.58769862875094",
+Test and Fly Laboratory,Kampala,"Yusuf Lule Road, Kampala, Uganda",0.328,32.583324,"0.3279995303971809, 32.58332419987116",
+Uganda Cancer Institute,Kampala,"Upper Mulago Hill Rd, Kampala, Uganda",0.341566,32.577939,"0.34156560138915515, 32.577938699857306",
+IOM Laboratory,Kampala,"Plot 6A Bukoto Crescent, Naguru, Kampala 11431, Uganda",0.341914,32.605025,"0.3419138946476636, 32.6050250521126",
+ANCA Biotech,Kampala,"118 Luthuli Ave, Kampala, Uganda",0.307125,32.624409,"0.30712525960239967, 32.62440869986175",
+Case Clinic,Kampala,"69-71 Buganda Rd, Kampala, Uganda",0.32492,32.575134,"0.32492007311341675, 32.57513447097692",Case Medical Centre
+MSF-Epicentre Lab-Mbarara,Kampala,"80, Plot 672, Hanlon Road, Nsambya Hill/P.O. Box 2886 Hanlon Rd, Kampala, Uganda",0.30074,32.589017,"0.30073994493747824, 32.589017342090145",MSF swiss SUKA
+Rakai Health Sciences,Kalisizo,"Masaka - Kakuto Rd, Kalisizo, Uganda",-0.538277,31.621839,"-0.5382766032727377, 31.621838828618166",
+TestXpress Laboratories,Entebbe,"Plot 168 Kampala Road, Entebbe, Uganda",0.059894,32.462367,"0.05989437682766108, 32.4623670709331",
+Lancet Laboratories,Kampala,"Plot 1 Kyadondo road, Kampala, Uganda",0.28835,32.559739,"0.2883501600495953, 32.55973909986086",
+ATCG Laboratories,Kampala,"Plot M219 Nakawa Industrial Area, Inside UIRI, Kampala P.o.box 21338, Kampala, Uganda",0.337891,32.625401,"0.33789097348845115, 32.62540110209415",
+Same Day Labs,Kampala,"Office No 3, REGENCY PLAZA, 18 Lugogo By-Pass, Kampala, Uganda",0.331333,32.602524,"0.3313325589865815, 32.60252429988367",
