@@ -14,3 +14,6 @@ dependencies:
   - poppler
   - numpy
   - alphashape
+  - tqdm
+  - scikit-learn
+  - scipy
