@@ -6,10 +6,7 @@
 
 [![Binder](https://beta.mybinder.org/badge.svg)](https://beta.mybinder.org/v2/gh/PHI-Case-Studies/2021-HELINA-COVID19-OSMNx-Workshop/main)
 
-This is a **digital case study** built with [Jupyter Notebook](https://jupyter.org/) and Docker about use of Open Street Map and Networkx (OSMNx) Python package to analyze distance metrics for COVID19 use. Click on the BinderHub link above to interact with this digital case study. Wait a few minutes for the BinderHub service to complete its setup and launch. Enjoy the rest of the story after you launch the case study.
-
-### Using BinderHub
-After clicking on the "launch binder" link above, wait for a few minutes to BinderHub build the Docker container.
+This is a **digital case study** built with [Jupyter Notebook](https://jupyter.org/) and Docker about use of Open Street Map and Networkx (OSMNx) Python package to analyze distance metrics for COVID19 use. Click on the BinderHub link above to interact with this digital case study. Wait a few minutes for the BinderHub service to complete its setup and launch. (Note: Binderhub may have limited resources to support the RAM, disk and compute requirements for this case study. It may be best to use JupyterLab installed on your local machine using the Anaconda installer.)
 
 ### Learn More About
 1. [Project Jupyter](https://jupyter.org/)
