@@ -2,8 +2,8 @@ name: advanced1
 channels:
   - conda-forge
 dependencies:
-  - python>=3.9*
-  - folium=0.12*
+  - python>=3.7*
+  - folium
   - jinja2
   - osmnx=1.*
   - matplotlib
@@ -22,3 +22,6 @@ dependencies:
   - pyproj
   - tqdm
   - ipywidgets
+  - ipykernel
+  - nodejs
+  - pyicu
