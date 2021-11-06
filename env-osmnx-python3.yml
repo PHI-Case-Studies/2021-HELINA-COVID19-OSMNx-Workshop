@@ -1,0 +1,27 @@
+name: osmnx-python3
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.7*
+  - folium
+  - jinja2
+  - osmnx=1.*
+  - matplotlib
+  - pandas=1.*
+  - geopandas
+  - descartes
+  - shapely
+  - poppler
+  - numpy
+  - alphashape
+  - tqdm
+  - scikit-learn
+  - scipy
+  - gdal
+  - libgdal
+  - pyproj
+  - tqdm
+  - ipywidgets
+  - ipykernel
+  - nodejs
+  - pyicu
