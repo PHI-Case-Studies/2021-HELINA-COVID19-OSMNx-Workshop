@@ -77,7 +77,36 @@ def compute_d3(paired_df, G_proj, G):
     """
     paired_df['path_node_list'] = ox.distance.shortest_path(\
                         G_proj, paired_df['r_node'].values, \
-                        paired_df['t_node'].values, weight='length', cpus=2)
+                        paired_df['t_node'].values, weight='length', cpus=1)
+    paired_df['d3_euc'] = ox.distance.euclidean_dist_vec(\
+                        paired_df['prj_lat'], paired_df['prj_lon'], \
+                        paired_df['PRJ_LAT'], paired_df['PRJ_LON'])
+    paired_df['d3_path_sum'] = paired_df['path_node_list']\
+            .map(lambda x: get_d3_path_sum(x, G_proj))
+    paired_df['d3_shapely'] = paired_df['path_node_list']\
+            .map(lambda x: LineString(create_coords_list(x, G_proj)))
+    paired_df['d3_edge_attrs'] = paired_df['path_node_list']\
+            .map(lambda x: np.sum(ox.utils_graph.get_route_edge_attributes(\
+                                        G, x, attribute="length")))
+    paired_df['d_total'] = paired_df[['d1','d2','d3_edge_attrs']].sum(axis=1)
+    
+    return paired_df.sort_values(by=['d_total'])\
+            .groupby(['r_node'], as_index=False).first()
+
+def compute_d3_loop(paired_df, G_proj, G):
+    path_node_list = []
+    paired_df['path_node_list'] = ''
+    for index, r in paired_df.iterrows():
+        if r.r_node in G_proj:
+            if r.t_node in G_proj:
+                path_node_list = ox.distance.shortest_path(G_proj, r.r_node, r.t_node, \
+                                                           weight='length', cpus=2)
+                paired_df.at[index,'path_node_list'] = path_node_list
+            else:
+                print('t_node not found:', r.t_node)
+        else:
+            print('r_node not found:', r.r_node)
+    
     paired_df['d3_euc'] = ox.distance.euclidean_dist_vec(\
                         paired_df['prj_lat'], paired_df['prj_lon'], \
                         paired_df['PRJ_LAT'], paired_df['PRJ_LON'])
