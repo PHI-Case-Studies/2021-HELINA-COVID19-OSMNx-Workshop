@@ -1,27 +1,49 @@
-name: osmnx-python3
+name: osmnx_py3
 channels:
   - conda-forge
+  - anaconda
+  - plotly
 dependencies:
-  - python>=3.7*
-  - folium
-  - jinja2
-  - osmnx=1.*
-  - matplotlib
-  - pandas=1.*
-  - geopandas
-  - descartes
-  - shapely
-  - poppler
-  - numpy
+  - python=3.9.9
+  - jupyterlab=3.2.8
+  - folium=0.12.1
+  - jinja2=3.0.3
+  - osmnx=1.1.2
+  - matplotlib=3.5.0
+  - pandas=1.3.4
+  - geopandas=0.10.2
+  - geopandas-base=0.10.2
+  - descartes=1.1.0
+  - shapely=1.8.0
+  - poppler=21.09.0
+  - numpy=1.21.4 
   - alphashape
-  - tqdm
-  - scikit-learn
-  - scipy
-  - gdal
-  - libgdal
-  - pyproj
-  - tqdm
-  - ipywidgets
-  - ipykernel
-  - nodejs
-  - pyicu
+  - tqdm=4.62.3
+  - scikit-learn=1.0.1
+  - scipy=1.7.2
+  - gdal=3.3.3
+  - libgdal=3.3.3
+  - ipywidgets=7.6.5
+  - ipykernel=6.5.0
+  - leafmap=0.5.5
+  - ipython=7.29.0
+  - python-dateutil=2.8.2
+  - twisted=21.7.0
+  - jupyter_contrib_core=0.3.3
+  - uritemplate=4.1.1
+  - pandas-datareader=0.10.0
+  - nbresuse=0.4.0
+  - missingno=0.4.2
+  - sklearn-pandas=2.2.0
+  - pyzmq=22.3.0
+  - nbgitpuller=1.0.2
+  - pandas-profiling=3.1.0
+  - yarl=1.7.2
+  - openpyxl=3.0.9
+  - numba=0.53.1
+  - pyarrow=6.0.1
+  - lz4=3.1.10
+  - pip=21.3.1
+  - pip:
+    - websocket==0.2.1
+    - apiclient==1.0.4
