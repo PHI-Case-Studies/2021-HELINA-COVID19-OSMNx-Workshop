@@ -81,17 +81,22 @@ def compute_d1_loop(res_gdf, G_proj):
                                     r.prj_lat, return_dist=True)
         res_gdf.at[index,'r_node'] = r_node
         res_gdf.at[index, 'd1'] = d1
+        r_node_lat = G_proj.nodes[r_node]['lat']
+        r_node_lon = G_proj.nodes[r_node]['lon']
+        r_node_x = G_proj.nodes[r_node]['x']
+        r_node_y = G_proj.nodes[r_node]['y']
+        res_gdf.at[index, 'r_node_lat'] = r_node_lat
+        res_gdf.at[index, 'r_node_lon'] = r_node_lon
+        res_gdf.at[index, 'r_node_x'] = r_node_x
+        res_gdf.at[index, 'r_node_y'] = r_node_y
         d1_euc = ox.distance.euclidean_dist_vec(\
                 r.prj_lat, r.prj_lon, r.r_node_y, r.r_node_x)
         res_gdf.at[index, 'd1_euc'] = d1_euc
-    res_gdf['r_node_lat'] = res_gdf['r_node'].map(lambda x: G_proj.nodes[x]['lat'])
-    res_gdf['r_node_lon'] = res_gdf['r_node'].map(lambda x: G_proj.nodes[x]['lon'])
-    res_gdf['r_node_x'] = res_gdf['r_node'].map(lambda x: G_proj.nodes[x]['x'])
-    res_gdf['r_node_y'] = res_gdf['r_node'].map(lambda x: G_proj.nodes[x]['y'])
-    for index, r in res_gdf.iterrows():
-        d1_euc = ox.distance.euclidean_dist_vec(\
-                r.prj_lat, r.prj_lon, r.r_node_y, r.r_node_x)
-        res_gdf.at[index, 'd1_euc'] = d1_euc
+    #res_gdf['r_node_lat'] = res_gdf['r_node'].map(lambda x: G_proj.nodes[x]['lat'])
+    #res_gdf['r_node_lon'] = res_gdf['r_node'].map(lambda x: G_proj.nodes[x]['lon'])
+    #res_gdf['r_node_x'] = res_gdf['r_node'].map(lambda x: G_proj.nodes[x]['x'])
+    #res_gdf['r_node_y'] = res_gdf['r_node'].map(lambda x: G_proj.nodes[x]['y'])
+    
     
     return res_gdf
 

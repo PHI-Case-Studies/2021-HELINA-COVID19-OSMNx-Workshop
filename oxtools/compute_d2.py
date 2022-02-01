@@ -79,11 +79,14 @@ def compute_d2_loop(test_site_gdf, G_proj):
                                     r.PRJ_LON, r.PRJ_LAT, return_dist=True)
         test_site_gdf.at[index,'t_node'] = t_node
         test_site_gdf.at[index, 'd2'] = d2
-    test_site_gdf['t_node_lat'] = test_site_gdf['t_node'].map(lambda x: G_proj.nodes[x]['lat'])
-    test_site_gdf['t_node_lon'] = test_site_gdf['t_node'].map(lambda x: G_proj.nodes[x]['lon'])
-    test_site_gdf['t_node_x'] = test_site_gdf['t_node'].map(lambda x: G_proj.nodes[x]['x'])
-    test_site_gdf['t_node_y'] = test_site_gdf['t_node'].map(lambda x: G_proj.nodes[x]['y'])
-    for index, r in test_site_gdf.iterrows():
+        t_node_lat = G_proj.nodes[t_node]['lat']
+        t_node_lon = G_proj.nodes[t_node]['lon']
+        t_node_x = G_proj.nodes[t_node]['x']
+        t_node_y = G_proj.nodes[t_node]['y']
+        test_site_gdf.at[index, 't_node_lat'] = t_node_lat
+        test_site_gdf.at[index, 't_node_lon'] = t_node_lon
+        test_site_gdf.at[index, 't_node_x'] = t_node_x
+        test_site_gdf.at[index, 't_node_y'] = t_node_y
         d2_euc = ox.distance.euclidean_dist_vec(\
                 r.PRJ_LAT, r.PRJ_LON, r.t_node_y, r.t_node_x)
         test_site_gdf.at[index, 'd2_euc'] = d2_euc

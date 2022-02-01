@@ -84,7 +84,7 @@ def compute_d3(paired_df, G_proj, G):
     paired_df['d3_path_sum'] = paired_df['path_node_list']\
             .map(lambda x: get_d3_path_sum(x, G_proj))
     paired_df['d3_shapely'] = paired_df['path_node_list']\
-            .map(lambda x: LineString(create_coords_list(x, G_proj)))
+            .map(lambda x: LineString(create_coords_list(x, G_proj)).length)
     paired_df['d3_edge_attrs'] = paired_df['path_node_list']\
             .map(lambda x: np.sum(ox.utils_graph.get_route_edge_attributes(\
                                         G, x, attribute="length")))
@@ -102,22 +102,23 @@ def compute_d3_loop(paired_df, G_proj, G):
                 path_node_list = ox.distance.shortest_path(G_proj, r.r_node, r.t_node, \
                                                            weight='length', cpus=2)
                 paired_df.at[index,'path_node_list'] = path_node_list
+                d3_euc = ox.distance.euclidean_dist_vec(\
+                                    r.prj_lat, r.prj_lon, \
+                                    r.PRJ_LAT, r.PRJ_LON)
+                paired_df.at[index,'d3_euc'] = d3_euc
+                d3_path_sum = get_d3_path_sum(path_node_list, G_proj)
+                paired_df.at[index,'d3_path_sum'] = d3_path_sum
+                d3_shapely = LineString(create_coords_list(path_node_list, G_proj)).length
+                paired_df.at[index,'d3_shapely'] = d3_shapely
+                d3_edge_attrs = np.sum(ox.utils_graph.get_route_edge_attributes(\
+                                                    G, path_node_list, attribute="length"))
+                paired_df.at[index,'d3_edge_attrs'] = d3_edge_attrs
+                d_total = r.d1 + r.d2 + d3_edge_attrs
+                paired_df.at[index,'d_total'] = d_total
             else:
                 print('t_node not found:', r.t_node)
         else:
             print('r_node not found:', r.r_node)
-    
-    paired_df['d3_euc'] = ox.distance.euclidean_dist_vec(\
-                        paired_df['prj_lat'], paired_df['prj_lon'], \
-                        paired_df['PRJ_LAT'], paired_df['PRJ_LON'])
-    paired_df['d3_path_sum'] = paired_df['path_node_list']\
-            .map(lambda x: get_d3_path_sum(x, G_proj))
-    paired_df['d3_shapely'] = paired_df['path_node_list']\
-            .map(lambda x: LineString(create_coords_list(x, G_proj)))
-    paired_df['d3_edge_attrs'] = paired_df['path_node_list']\
-            .map(lambda x: np.sum(ox.utils_graph.get_route_edge_attributes(\
-                                        G, x, attribute="length")))
-    paired_df['d_total'] = paired_df[['d1','d2','d3_edge_attrs']].sum(axis=1)
     
     return paired_df.sort_values(by=['d_total'])\
             .groupby(['r_node'], as_index=False).first()
